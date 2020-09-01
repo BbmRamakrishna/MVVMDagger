@@ -1,2 +1,2 @@
-include ':app'
+include ':app', ':simple-call-adapter'
 rootProject.name = "MvvmArchitecture"
