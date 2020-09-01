@@ -11,6 +11,8 @@ abstract class BaseViewModel : ViewModel() {
 
     lateinit var navigatorListener: Navigator
     val systemAlertListener = ObservableField(ErrorTemplate.NONE)
+    val loadingListener = ObservableField(ErrorTemplate.NONE)
+
 
 
     fun route(navigateTo: String, data: Any? = null) {

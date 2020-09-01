@@ -1,8 +1,15 @@
 package com.example.mvvmarchitecture.ui
 
+import android.content.Context
+import androidx.appcompat.app.AppCompatActivity
+import androidx.cardview.widget.CardView
 import androidx.databinding.Observable
 import androidx.databinding.ObservableBoolean
 import androidx.databinding.ObservableField
+import com.example.mvvmarchitecture.R
+import com.example.mvvmarchitecture.utils.BottomSheetClickListener
+import com.example.mvvmarchitecture.utils.BottomSheetType
+import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import com.igweze.ebi.simplecalladapter.Subscription
 import java.util.ArrayList
 

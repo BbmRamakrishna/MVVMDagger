@@ -20,6 +20,6 @@
         path="." />
     <external-path
         name="my_images"
-        path="Android/data/com.mfino.goodmoney/files/Pictures" />
+        path="Android/data/com.example.mvvmarchitecture" />
 
 </paths>

@@ -14,6 +14,8 @@ import androidx.lifecycle.ViewModelProviders
 import com.example.mvvmarchitecture.R
 import com.example.mvvmarchitecture.BR
 import com.example.mvvmarchitecture.ui.observe
+import com.google.android.material.appbar.AppBarLayout
+import com.google.android.material.appbar.CollapsingToolbarLayout
 import dagger.android.AndroidInjection
 import dagger.android.AndroidInjector
 import dagger.android.DispatchingAndroidInjector
@@ -66,6 +68,30 @@ abstract class BaseActivity<IViewModel : BaseViewModel, Binding : ViewDataBindin
             viewModel.systemAlertListener.set(ErrorTemplate.NONE)
         }
 
+    }
+
+    fun loadFragment(fragment: Fragment, frameContainerId: Int, expandToolbar: Boolean, collapsingToolbarLayout: CollapsingToolbarLayout, appBarLayout: AppBarLayout) {
+        // load fragment
+
+        val transaction = supportFragmentManager.beginTransaction()
+        transaction.replace(frameContainerId, fragment)
+        transaction.addToBackStack(null)
+        transaction.commit()
+
+        var lp: AppBarLayout.LayoutParams? = null
+        if (expandToolbar) {
+            appBarLayout.setExpanded(true)
+            lp = collapsingToolbarLayout.layoutParams as AppBarLayout.LayoutParams
+            lp.scrollFlags = AppBarLayout.LayoutParams.SCROLL_FLAG_SCROLL or AppBarLayout.LayoutParams.SCROLL_FLAG_EXIT_UNTIL_COLLAPSED
+            collapsingToolbarLayout.layoutParams = lp
+
+        } else {
+
+            lp = collapsingToolbarLayout.layoutParams as AppBarLayout.LayoutParams
+            lp.scrollFlags = AppBarLayout.LayoutParams.SCROLL_FLAG_SNAP
+            collapsingToolbarLayout.layoutParams = lp
+            appBarLayout.setExpanded(false)
+        }
     }
 
     fun showDialog() {
