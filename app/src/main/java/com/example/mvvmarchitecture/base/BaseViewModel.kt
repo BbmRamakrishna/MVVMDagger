@@ -13,8 +13,6 @@ abstract class BaseViewModel : ViewModel() {
     val systemAlertListener = ObservableField(ErrorTemplate.NONE)
     val loadingListener = ObservableField(ErrorTemplate.NONE)
 
-
-
     fun route(navigateTo: String, data: Any? = null) {
         this.navigatorListener.navigate(navigateTo, data)
     }

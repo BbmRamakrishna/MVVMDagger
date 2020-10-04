@@ -4,6 +4,8 @@ import android.content.Context
 import com.example.mvvmarchitecture.server.Api
 import com.example.mvvmarchitecture.server.ForecastResponse
 import com.example.mvvmarchitecture.server.WeatherResponse
+import com.example.mvvmarchitecture.server.response.AssignmentResponse
+import com.example.mvvmarchitecture.server.response.Replies
 import com.igweze.ebi.simplecalladapter.Simple
 import javax.inject.Inject
 
@@ -19,5 +21,9 @@ class Repository @Inject constructor(
 
     override fun getForecast(): Simple<ForecastResponse> {
         return api.getForecast()
+    }
+
+    override fun getAssignmentResonse(): Simple<AssignmentResponse> {
+        return api.getAssignmentRes()
     }
 }

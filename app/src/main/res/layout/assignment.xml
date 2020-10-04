@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="viewModel"
+            type="com.example.mvvmarchitecture.ui.main.AssignmentViewModel" />
+
+    </data>
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cv_assignment_res"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/circular_image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="@dimen/dimen_10dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            >
+
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:scaleType="centerCrop"
+                android:src="@color/black"
+                android:layout_marginStart="@dimen/dimen_10dp"
+                />
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:id="@+id/tv_header"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{viewModel.displayName}"
+            android:layout_marginStart="@dimen/dimen_10dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toEndOf="@id/circular_image"
+            />
+
+        <TextView
+            android:id="@+id/tv_sub_heading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{viewModel.userName}"
+            android:layout_marginStart="@dimen/dimen_10dp"
+            app:layout_constraintTop_toBottomOf="@id/tv_header"
+            app:layout_constraintStart_toEndOf="@id/circular_image"
+            />
+
+        <TextView
+            android:id="@+id/five_minutes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{viewModel.postedAt}"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/select_option"
+            android:layout_marginEnd="@dimen/dimen_10dp"
+            />
+
+        <ImageView
+            android:id="@+id/select_option"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_baseline_menu_24"
+            android:layout_marginEnd="@dimen/dimen_10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            />
+
+        <TextView
+            android:id="@+id/tv_going_on"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{viewModel.displayText}"
+            app:layout_constraintTop_toBottomOf="@id/circular_image"
+            android:layout_marginStart="@dimen/dimen_20dp"
+            android:layout_marginTop="@dimen/dimen_10dp"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginEnd="@dimen/dimen_10dp"
+            />
+
+        <ImageView
+            android:id="@+id/share"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_baseline_menu_24"
+            android:layout_marginTop="@dimen/dimen_10dp"
+            app:layout_constraintTop_toBottomOf="@id/tv_going_on"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="@dimen/dimen_10dp"
+            />
+
+        <TextView
+            android:id="@+id/share_txt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{viewModel.likes}"
+            android:layout_marginTop="@dimen/dimen_12dp"
+            app:layout_constraintTop_toBottomOf="@id/tv_going_on"
+            app:layout_constraintStart_toEndOf="@id/share"
+            android:layout_marginStart="@dimen/dimen_10dp"
+            />
+
+
+        <ImageView
+            android:id="@+id/like"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_baseline_menu_24"
+            android:layout_marginTop="@dimen/dimen_10dp"
+            app:layout_constraintTop_toBottomOf="@id/tv_going_on"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginStart="@dimen/dimen_10dp"
+            />
+
+        <TextView
+            android:id="@+id/like_txt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{viewModel.shares}"
+            android:layout_marginTop="@dimen/dimen_12dp"
+            app:layout_constraintTop_toBottomOf="@id/tv_going_on"
+            app:layout_constraintStart_toEndOf="@id/like"
+            android:layout_marginStart="@dimen/dimen_10dp"
+            />
+
+        <ImageView
+            android:id="@+id/chat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_baseline_menu_24"
+            android:layout_marginTop="@dimen/dimen_10dp"
+            android:layout_marginEnd="@dimen/dimen_10dp"
+            app:layout_constraintTop_toBottomOf="@id/tv_going_on"
+            app:layout_constraintEnd_toStartOf="@id/chat_txt"
+            android:layout_marginStart="@dimen/dimen_10dp"
+            />
+
+        <TextView
+            android:id="@+id/chat_txt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{viewModel.postlevel}"
+            android:layout_marginTop="@dimen/dimen_12dp"
+            android:layout_marginEnd="@dimen/dimen_10dp"
+            app:layout_constraintTop_toBottomOf="@id/tv_going_on"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginStart="@dimen/dimen_10dp"
+            />
+
+        <View
+            android:id="@+id/view_divider"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="@color/black"
+            android:layout_marginTop="@dimen/dimen_10dp"
+            app:layout_constraintTop_toBottomOf="@id/chat"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_view_assignmentDetails"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:nestedScrollingEnabled="false"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintTop_toBottomOf="@id/cv_assignment_res"
+        tools:listitem="@layout/assignment_item" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

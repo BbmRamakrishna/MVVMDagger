@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">MVVM Architecture</string>
+    <string name="app_name">Assignment</string>
     <string name="text_app_requires_mandatory_permissions">Application requires some mandatory permissions, please accept to proceed.</string>
     <string name="text_go_to_setting">Go to settings and enable permissions for the denied.</string>
     <string name="label_current_temperature">Current Temperature</string>
@@ -7,5 +7,10 @@
     <string name="label_retry">Retry</string>
     <string name="label_retry_forecast">Retry Forecast</string>
     <string name="label_next_5_days">Temperature forecast for the next 5 days:</string>
+    <string name="Charline">Charline</string>
+    <string name="charline1">Charline1</string>
+    <string name="_5m_ago">5m ago</string>
+    <string name="going_on_my_first_hike_any_suggestion">GOing on my first hike any suggestion</string>
+    <string name="_6">6</string>
 
 </resources>
