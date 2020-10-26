@@ -70,6 +70,8 @@ class AssignmentActivity : BaseActivity<AssignmentViewModel, AssignmentBinding>(
 
         viewModel.clickedItemResponse.set(item)
 
+        onMapReady(googleMap)
+
     }
 
     override fun onMapReady(p0: GoogleMap?) {
@@ -78,17 +80,21 @@ class AssignmentActivity : BaseActivity<AssignmentViewModel, AssignmentBinding>(
 
         var latLng: LatLng = LatLng(viewModel.latitude!!, viewModel.longitude!!)
 
-        googleMap?.addMarker(
-            MarkerOptions().position(latLng).title(
-                "${viewModel.clickedItemResponse.get()?.id} \t ${viewModel.clickedItemResponse.get()?.name} \t ${
-                    viewModel.clickedItemResponse.get()?.year
-                } \t ${
-                    viewModel.clickedItemResponse.get()?.color
-                } \t ${
-                    viewModel.clickedItemResponse.get()?.pantone_value
-                }"
+        if(viewModel.itemClicked.get()?:false){
+            googleMap?.addMarker(
+                MarkerOptions().position(latLng).title(
+                    "${viewModel.clickedItemResponse.get()?.id} \t ${viewModel.clickedItemResponse.get()?.name} \t ${
+                        viewModel.clickedItemResponse.get()?.year
+                    } \t ${
+                        viewModel.clickedItemResponse.get()?.color
+                    } \t ${
+                        viewModel.clickedItemResponse.get()?.pantone_value
+                    }"
+                )
             )
-        )
+        }
+
+
 
 //        googleMap?.addMarker(
 //            MarkerOptions().position(latLng).title(
