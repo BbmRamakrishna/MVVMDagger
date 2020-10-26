@@ -14,6 +14,7 @@ import androidx.lifecycle.ViewModelProviders
 import com.example.mvvmarchitecture.R
 import com.example.mvvmarchitecture.BR
 import com.example.mvvmarchitecture.ui.observe
+import com.google.android.gms.location.FusedLocationProviderClient
 import com.google.android.material.appbar.AppBarLayout
 import com.google.android.material.appbar.CollapsingToolbarLayout
 import dagger.android.AndroidInjection

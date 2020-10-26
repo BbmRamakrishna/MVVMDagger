@@ -39,4 +39,6 @@ ext {
     retrofitVersion = "2.6.2"
     publishedGroupId = 'com.igweze.ebi'
     libraryVersion = '1.0.1'
+    googleplaceversion = '1.0.0'
+
 }

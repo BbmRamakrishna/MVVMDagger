@@ -3,15 +3,22 @@ package com.example.mvvmarchitecture.base
 import android.util.Log
 import androidx.databinding.ObservableField
 import androidx.lifecycle.ViewModel
+import com.example.mvvmarchitecture.repository.ILocalDataRepository
+import com.google.android.gms.location.FusedLocationProviderClient
 import retrofit2.HttpException
 import java.net.SocketTimeoutException
 import java.net.UnknownHostException
+import javax.inject.Inject
 
 abstract class BaseViewModel : ViewModel() {
 
     lateinit var navigatorListener: Navigator
     val systemAlertListener = ObservableField(ErrorTemplate.NONE)
     val loadingListener = ObservableField(ErrorTemplate.NONE)
+    lateinit var fusedLocationClient: FusedLocationProviderClient
+
+    @Inject
+    internal lateinit var localDataRepository: ILocalDataRepository
 
     fun route(navigateTo: String, data: Any? = null) {
         this.navigatorListener.navigate(navigateTo, data)

@@ -12,5 +12,13 @@
     <string name="_5m_ago">5m ago</string>
     <string name="going_on_my_first_hike_any_suggestion">GOing on my first hike any suggestion</string>
     <string name="_6">6</string>
+    <string name="id">ID : %s</string>
+    <string name="Name">Name : %s</string>
+    <string name="Year">Year : %s </string>
+    <string name="Color">Color : %s</string>
+    <string name="PanthonValue">PanthonValue : %s</string>
+    <string name="google_geocode_api_key">AIzaSyDXzB-wP-dmPuuNUUWOd-8HaXtLQN1Exog</string>
+
+
 
 </resources>

@@ -5,55 +5,57 @@ import com.google.gson.annotations.SerializedName
 
 class AssignmentResponse {
 
-    @SerializedName("username")
+
+    @SerializedName("page")
     @Expose
-    val username : String ? = null
-    @SerializedName("displayname")
+    val page: String ? = null
+    @SerializedName("per_page")
     @Expose
-    val displayname : String? = null
-    @SerializedName("text")
+    val per_page: String ? = null
+    @SerializedName("total")
     @Expose
-    val text : String? = null
-    @SerializedName("postedAt")
+    val total: String ? = null
+    @SerializedName("total_pages")
     @Expose
-    val postedAt : String? = null
-    @SerializedName("postLevel")
+    val total_pages: String ? = null
+    @SerializedName("data")
     @Expose
-    val postLevel : Int? = null
-    @SerializedName("likes")
+    var data: List<PagesData>? = null
+    @SerializedName("ad")
     @Expose
-    val likes : Int? = null
-    @SerializedName("shares")
-    @Expose
-    val shares : Int? = null
-    @SerializedName("replies")
-    @Expose
-    val replies : List<Replies>? = null
+    val ad: Ad ? = null
+
 }
 
-class Replies{
-    @SerializedName("username")
+class PagesData {
+
+    @SerializedName("id")
     @Expose
-    val username : String? = null
-    @SerializedName("displayname")
+    val id: String  ? = null
+    @SerializedName("name")
     @Expose
-    val displayname : String? = null
+    val name: String ? = null
+    @SerializedName("year")
+    @Expose
+    val year: String ? = null
+    @SerializedName("color")
+    @Expose
+    val color: String ? = null
+    @SerializedName("pantone_value")
+    @Expose
+    val pantone_value: String ? = null
+}
+
+class Ad {
+
+    @SerializedName("company")
+    @Expose
+    val company: String ? = null
+    @SerializedName("url")
+    @Expose
+    val url: String ? = null
     @SerializedName("text")
     @Expose
-    val text : String? = null
-    @SerializedName("postedAt")
-    @Expose
-    val postedAt : String? = null
-    @SerializedName("likes")
-    @Expose
-    val likes : Int? = null
-    @SerializedName("shares")
-    @Expose
-    val shares : Int? = null
-    @SerializedName("postLevel")
-    @Expose
-    val postLevel : Int? = null
-    @SerializedName("replies")
-    @Expose
-    val replies : List<Replies>? = null
+    val text: String ? = null
+
 }
